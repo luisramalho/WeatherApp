@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import org.jetbrains.anko.async
 import org.jetbrains.anko.find
+import org.jetbrains.anko.longToast
+import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         val forecastList: RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
+
+        async() {
+            Request("http://api.openweathermap.org/data/2.5/forecast/city?id=658226&APPID=$API_KEY").run()
+            uiThread { longToast("Request performed") }
+        }
     }
 
 }
