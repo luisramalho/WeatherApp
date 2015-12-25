@@ -32,7 +32,11 @@ public class ForecastDataMapper {
                 forecast.weather[0].description,
                 forecast.temp.max.toInt(),
                 forecast.temp.min.toInt(),
-                "icon")
+                generateIconUrl(forecast.weather[0].icon))
+    }
+
+    private fun generateIconUrl(iconCode: String): String {
+        return "http://openweathermap.org/img/w/$iconCode.png"
     }
 
     private fun convertDate(date: Long): String {
