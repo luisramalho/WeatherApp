@@ -9,7 +9,7 @@ data class ForecastList(val id: Long,
                         val country: String,
                         val dailyForecast: List<Forecast>) {
 
-    operator fun get(position: Int): Forecast = dailyForecast[position]
+    operator fun get(position: Int) = dailyForecast[position]
 
     fun size() = dailyForecast.size
 }

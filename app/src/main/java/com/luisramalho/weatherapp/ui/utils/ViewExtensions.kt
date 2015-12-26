@@ -8,5 +8,5 @@ import android.view.View
  * <info@luisramalho.com>
  */
 
-public val View.ctx: Context
+val View.ctx: Context
     get() = context

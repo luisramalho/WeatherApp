@@ -8,7 +8,7 @@ import java.net.URL
  * Created by Luís Ramalho on 24/12/15.
  * <info@luisramalho.com>
  */
-public class ForecastRequest(val idCode: String) {
+class ForecastRequest(val idCode: String) {
 
     companion object {
         private val APP_ID = "15646a06818f61f7b8d7823ca833e1ce"
@@ -17,7 +17,7 @@ public class ForecastRequest(val idCode: String) {
         private val COMPLETE_URL = "$URL&APPID=$APP_ID&id="
     }
 
-    public fun execute(): ForecastResult {
+    fun execute(): ForecastResult {
         val forecastJsonStr = URL(COMPLETE_URL + idCode).readText()
         return Gson().fromJson(forecastJsonStr, ForecastResult::class.java)
     }

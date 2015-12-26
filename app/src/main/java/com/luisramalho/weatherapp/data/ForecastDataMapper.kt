@@ -11,8 +11,8 @@ import java.util.*
  * Created by Luís Ramalho on 24/12/15.
  * <info@luisramalho.com>
  */
-public class ForecastDataMapper {
-    public fun convertFromDataModel(forecast: ForecastResult): ForecastList {
+class ForecastDataMapper {
+    fun convertFromDataModel(forecast: ForecastResult): ForecastList {
         return ForecastList(
                 forecast.city.id,
                 forecast.city.name,
@@ -35,9 +35,8 @@ public class ForecastDataMapper {
                 generateIconUrl(forecast.weather[0].icon))
     }
 
-    private fun generateIconUrl(iconCode: String): String {
-        return "http://openweathermap.org/img/w/$iconCode.png"
-    }
+    private fun generateIconUrl(iconCode: String) =
+            "http://openweathermap.org/img/w/$iconCode.png"
 
     private fun convertDate(date: Long): String {
         val df = DateFormat.getDateInstance(DateFormat.MEDIUM,

@@ -18,7 +18,7 @@ import org.jetbrains.anko.onClick
  * Created by Luís Ramalho on 24/12/15.
  * <info@luisramalho.com>
  */
-public class ForecastListAdapter(
+class ForecastListAdapter(
         val weekForecast: ForecastList,
         val itemClick: (Forecast) -> Unit) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {
@@ -34,7 +34,7 @@ public class ForecastListAdapter(
         holder.bindForecast(weekForecast[position])
     }
 
-    override fun getItemCount():Int = weekForecast.size()
+    override fun getItemCount() = weekForecast.size()
 
     class ViewHolder(view: View, val itemClick: (Forecast) -> Unit) :
             RecyclerView.ViewHolder(view) {
@@ -55,11 +55,11 @@ public class ForecastListAdapter(
 
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
-                Picasso.with(itemView.context).load(iconUrl).into(iconView)
+                Picasso.with(itemView.ctx).load(iconUrl).into(iconView)
                 dateView.text = date
                 descriptionView.text = description
-                maxTemperatureView.text = "${high.toString()}"
-                minTemperatureView.text = "${low.toString()}"
+                maxTemperatureView.text = "$high"
+                minTemperatureView.text = "$low"
                 itemView.onClick { itemClick(forecast) }
             }
         }
