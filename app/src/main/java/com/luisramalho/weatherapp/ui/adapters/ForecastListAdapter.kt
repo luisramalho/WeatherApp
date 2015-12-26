@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.luisramalho.weatherapp.domain.model.Forecast
 import com.luisramalho.weatherapp.domain.model.ForecastList
-import com.luisramalho.weatherapp.ui.utils.ctx
+import com.luisramalho.weatherapp.extensions.ctx
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.onClick

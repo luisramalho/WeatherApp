@@ -1,4 +1,4 @@
-package com.luisramalho.weatherapp.ui.utils
+package com.luisramalho.weatherapp.extensions
 
 import android.content.Context
 import android.view.View
