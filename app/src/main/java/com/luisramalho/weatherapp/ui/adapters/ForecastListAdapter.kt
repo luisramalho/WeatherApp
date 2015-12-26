@@ -64,8 +64,4 @@ public class ForecastListAdapter(
             }
         }
     }
-
-    public interface OnItemClickListener {
-        operator fun invoke(forecast: Forecast)
-    }
 }

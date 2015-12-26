@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.luisramalho.weatherapp.R
 import com.luisramalho.weatherapp.RequestForecastCommand
-import com.luisramalho.weatherapp.domain.model.Forecast
 import com.luisramalho.weatherapp.ui.adapters.ForecastListAdapter
 import org.jetbrains.anko.async
 import org.jetbrains.anko.find
