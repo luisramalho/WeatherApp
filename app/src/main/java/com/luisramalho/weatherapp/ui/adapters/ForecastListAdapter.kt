@@ -11,6 +11,8 @@ import com.squareup.picasso.Picasso
 import org.jetbrains.anko.layoutInflater
 import org.jetbrains.anko.onClick
 import kotlinx.android.synthetic.item_forecast.view.*
+import java.text.DateFormat
+import java.util.*
 
 /**
  * Created by Luís Ramalho on 24/12/15.
@@ -40,12 +42,18 @@ class ForecastListAdapter(
         fun bindForecast(forecast: Forecast) {
             with(forecast) {
                 Picasso.with(itemView.ctx).load(iconUrl).into(itemView.icon)
-                itemView.date.text = date
+                itemView.date.text = convertDate(date)
                 itemView.description.text = description
                 itemView.maxTemperature.text = "$high"
                 itemView.minTemperature.text = "$low"
                 itemView.onClick { itemClick(forecast) }
             }
+        }
+
+        private fun convertDate(date: Long): String {
+            val df = DateFormat.getDateInstance(DateFormat.MEDIUM,
+                    Locale.getDefault())
+            return df.format(date * 1000)
         }
     }
 }

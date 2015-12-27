@@ -1,4 +1,4 @@
-package com.luisramalho.weatherapp.data
+package com.luisramalho.weatherapp.data.server
 
 /**
  * Created by Luís Ramalho on 24/12/15.

@@ -1,4 +1,4 @@
-package com.luisramalho.weatherapp.i
+package com.luisramalho.weatherapp.domain.commands
 
 /**
  * Created by Luís Ramalho on 24/12/15.

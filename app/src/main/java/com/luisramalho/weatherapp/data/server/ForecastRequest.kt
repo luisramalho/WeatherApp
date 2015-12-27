@@ -1,14 +1,14 @@
-package com.luisramalho.weatherapp
+package com.luisramalho.weatherapp.data.server
 
 import com.google.gson.Gson
-import com.luisramalho.weatherapp.data.ResponseClasses.ForecastResult
+import com.luisramalho.weatherapp.data.server.ResponseClasses.ForecastResult
 import java.net.URL
 
 /**
  * Created by Luís Ramalho on 24/12/15.
  * <info@luisramalho.com>
  */
-class ForecastRequest(val idCode: String) {
+class ForecastRequest(val idCode: Long) {
 
     companion object {
         private val APP_ID = "15646a06818f61f7b8d7823ca833e1ce"
